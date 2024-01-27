@@ -7,10 +7,10 @@ echo "2. UAT"
 read -p "Enter # of the user pool (1/2): " Environment
 
 if [ "$Environment" == "1" ]; then
-    USER_POOL_ID="ap-southeast-2_1WQPCDzKB"
+    USER_POOL_ID="us-east-2_1WQPCDzKB"
     ENV=PROD
 elif [ "$Environment" == "2" ]; then
-    USER_POOL_ID="ap-southeast-2_o0QahMhz8"
+    USER_POOL_ID="us-east-2_o0QahMhz8"
     ENV=UAT
 else
     echo "Invalid choice. Exiting the script."
@@ -37,7 +37,7 @@ echo "List of users in group '$ENV-$GROUP_NAME' saved to '$ENV-$GROUP_NAME-cogni
 # Create a text file to store the events
 echo "Email,RecentEventType,Last Login Date[AEST]" > $ENV-$GROUP_NAME-user_recent_auth_activities.txt
 
-# Read user emails from the file
+# Read user emails from the created text file
 while IFS= read -r email
 
 do
